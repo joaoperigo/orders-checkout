@@ -1,0 +1,57 @@
+{
+    "produtos": {
+  
+        "macarrao": {
+            "id": 1,
+            "titulo": "Macarrão",
+            "total": null
+        },
+        "executivo": {
+          "id": 2,
+          "titulo": "Prato feito",
+          "total": null
+        },
+        "coca": {
+          "id": 3,
+          "titulo": "Coca-Cola",
+          "total": null
+        }
+    },
+  
+    "status": [
+      {
+        "id": 1,
+        "tipo": "Solicitado"
+      },
+      {
+        "id": 2,
+        "tipo": "Em produção"
+      },
+      {
+        "id": 3,
+        "tipo": "Finalizado"
+      }
+    ],
+  
+    "pedidos": [
+      {
+        "id": 1,
+        "nome": "Joao",
+        "produtos": {
+          "macarrao": {
+              "qtd": 2,
+              "observacoes": "Sem aionese"
+          },
+          "executivo": {
+              "qtd": 1,
+              "observacoes": "Sem arroz"
+          }
+        },
+        "metodoPagto": {
+            "parcelas": 1,
+            "forma": "Cartão Crédito"
+        }
+      }
+    ]
+    
+  }
