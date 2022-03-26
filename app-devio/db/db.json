@@ -1,22 +1,21 @@
 {
-    "produtos": {
-  
-        "macarrao": {
+    "produtos": [
+        {
             "id": 1,
             "titulo": "Macarrão",
             "total": null
         },
-        "executivo": {
+         {
           "id": 2,
           "titulo": "Prato feito",
           "total": null
         },
-        "coca": {
+         {
           "id": 3,
           "titulo": "Coca-Cola",
           "total": null
         }
-    },
+      ],
   
     "status": [
       {
