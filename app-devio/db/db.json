@@ -3,16 +3,22 @@
         {
             "id": 1,
             "titulo": "Macarrão",
+            "img": "http://placekitten.com/100/100",
+            "alt": "Gatinhos",
             "total": null
         },
          {
           "id": 2,
           "titulo": "Prato feito",
+          "img": "http://placekitten.com/100/100",
+          "alt": "Gatinhos",
           "total": null
         },
          {
           "id": 3,
           "titulo": "Coca-Cola",
+          "img": "http://placekitten.com/100/100",
+          "alt": "Gatinhos",
           "total": null
         }
       ],
