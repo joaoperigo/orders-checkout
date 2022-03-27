@@ -1,62 +1,63 @@
 {
-    "produtos": [
+  "produtos": [
+    {
+      "id": 1,
+      "titulo": "Macarrão",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Prato feito",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 10
+    },
+    {
+      "id": 3,
+      "titulo": "Coca-Cola",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 23
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "tipo": "Solicitado"
+    },
+    {
+      "id": 2,
+      "tipo": "Em produção"
+    },
+    {
+      "id": 3,
+      "tipo": "Finalizado"
+    }
+  ],
+  "pedidos": [
+    {
+      "nome": "Fulano",
+      "produtos": [
         {
-            "id": 1,
-            "titulo": "Macarrão",
-            "img": "http://placekitten.com/100/100",
-            "alt": "Gatinhos",
-            "total": null
+          "id": 1,
+          "titulo": "Macarrão",
+          "observacoes": "Sem Maionese",
+          "qtd": 2
         },
-         {
+        {
           "id": 2,
-          "titulo": "Prato feito",
-          "img": "http://placekitten.com/100/100",
-          "alt": "Gatinhos",
-          "total": null
-        },
-         {
-          "id": 3,
           "titulo": "Coca-Cola",
-          "img": "http://placekitten.com/100/100",
-          "alt": "Gatinhos",
-          "total": null
+          "observacoes": "Gelo limão",
+          "qtd": 2
         }
       ],
-  
-    "status": [
-      {
-        "id": 1,
-        "tipo": "Solicitado"
+      "metodoPagto": {
+        "parcelas": 3,
+        "forma": "Crédito"
       },
-      {
-        "id": 2,
-        "tipo": "Em produção"
-      },
-      {
-        "id": 3,
-        "tipo": "Finalizado"
-      }
-    ],
-  
-    "pedidos": [
-      {
-        "id": 1,
-        "nome": "Joao",
-        "produtos": {
-          "macarrao": {
-              "qtd": 2,
-              "observacoes": "Sem aionese"
-          },
-          "executivo": {
-              "qtd": 1,
-              "observacoes": "Sem arroz"
-          }
-        },
-        "metodoPagto": {
-            "parcelas": 1,
-            "forma": "Cartão Crédito"
-        }
-      }
-    ]
-    
-  }
+      "status": "Solicitado"
+    }
+  ]
+}

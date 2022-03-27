@@ -1,6 +1,6 @@
 <template>
 
-<form action="" @submit="sendForm($event)">
+<form action="" @submit="createPedido($event)">
 
     <div class="item-menu" v-for="produto in produtos" :key="produto.id">
         <div class="mb-3">
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="usr">QTD:</label>
-            <input type="number" id="usr" name="quantity" min="1" max="5">
+            <input type="number" id="usr" name="quantity" min="0" max="25">
         </div>
     </div>
 
@@ -44,10 +44,41 @@ export default {
 
             this.produtos = data
         },
-        sendForm(e) {
+        async createPedido(e) {
             e.preventDefault()
-            const observacoes = this.observacoes 
-            console.log(this.observacoes)
+            
+            const data = {
+                nome: "Fulano",
+                produtos: [
+                    {
+                        id: 1,
+                        titulo: "Macarrão",
+                        observacoes: "Sem Maionese",
+                        qtd: 2
+                    },
+                    {
+                        id: 2,
+                        titulo: "Coca-Cola",
+                        observacoes: "Gelo limão",
+                        qtd: 2
+                    }
+                ], 
+                metodoPagto: {
+                    parcelas: 3,
+                    forma: "Crédito"
+                },
+                status: "Solicitado"
+            }
+
+            const dataJson = JSON.stringify(data)
+
+            const req = await fetch("http://localhost:3000/pedidos", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: dataJson
+            })
+
+            const res = await req.json()
         }
     },
     mounted() {
