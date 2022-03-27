@@ -1,11 +1,12 @@
 <template>
 
-<form action="" @submit="createPedido($event)">
+<form action="">
 
     <div class="item-menu" v-for="produto in produtos" :key="produto.id">
         <div class="mb-3">
             <h2>#{{produto.id}} | {{produto.titulo}}</h2>
             <img :src="produto.img" :alt="produto.alt">
+            <button class="adicionar-produto" @click="addProduto($event)">+</button>
         </div>
         <div class="mb-3">
             <label for="observacoes" class="form-label">Email address</label>
@@ -34,7 +35,8 @@ export default {
             produtos: null,
             produto_id: null,
             observacoes: null,
-            qtd: null
+            qtd: null,
+            selecaoProdutos: null
         }
     },
     methods: {
@@ -44,41 +46,20 @@ export default {
 
             this.produtos = data
         },
-        async createPedido(e) {
+        async addProduto(e) {
             e.preventDefault()
-            
-            const data = {
-                nome: "Fulano",
-                produtos: [
-                    {
-                        id: 1,
-                        titulo: "Macarrão",
-                        observacoes: "Sem Maionese",
-                        qtd: 2
-                    },
-                    {
-                        id: 2,
-                        titulo: "Coca-Cola",
-                        observacoes: "Gelo limão",
-                        qtd: 2
-                    }
-                ], 
-                metodoPagto: {
-                    parcelas: 3,
-                    forma: "Crédito"
+            this.selecaoProdutos =  [{
+                    id: 1,
+                    titulo: "Macarrão",
+                    observacoes: "Sem Maionese",
+                    qtd: 2
                 },
-                status: "Solicitado"
-            }
-
-            const dataJson = JSON.stringify(data)
-
-            const req = await fetch("http://localhost:3000/pedidos", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: dataJson
-            })
-
-            const res = await req.json()
+                {
+                    id: 2,
+                    titulo: "Coca-Cola",
+                    observacoes: "Gelo limão",
+                    qtd: 2
+                }]          
         }
     },
     mounted() {
