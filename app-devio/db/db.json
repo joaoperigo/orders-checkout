@@ -1,28 +1,28 @@
 {
   "produtos": [
     {
-      "id": 1,
+      "id": 0,
       "titulo": "Macarrão",
       "img": "http://placekitten.com/100/100",
       "alt": "Gatinhos",
       "total": 1,
-      "valor": 50
+      "valor": 43
     },
     {
-      "id": 2,
+      "id": 1,
       "titulo": "Prato feito",
       "img": "http://placekitten.com/100/100",
       "alt": "Gatinhos",
       "total": 10,
-      "valor": 50
+      "valor": 23
     },
     {
-      "id": 3,
+      "id": 2,
       "titulo": "Coca-Cola",
       "img": "http://placekitten.com/100/100",
       "alt": "Gatinhos",
       "total": 23,
-      "valor": 50
+      "valor": 12
     }
   ],
   "status": [
@@ -50,7 +50,49 @@
     },
     {
       "nome": "asd",
+      "pedido": [
+        {
+          "id": 1,
+          "qtd": 3
+        },
+        {
+          "id": 3,
+          "qtd": 1
+        }
+      ],
+      "metodo": null,
       "id": 3
+    },
+    {
+      "nome": "asdfasd",
+      "pedido": [
+        {
+          "id": 0,
+          "qtd": 1
+        },
+        {
+          "id": 1,
+          "qtd": 4
+        },
+        {
+          "id": 2,
+          "qtd": 4
+        }
+      ],
+      "metodo": null,
+      "id": 4
+    },
+    {
+      "nome": "asd",
+      "pedido": null,
+      "metodo": null,
+      "id": 5
+    },
+    {
+      "nome": "asddsa",
+      "pedido": null,
+      "metodo": null,
+      "id": 6
     }
   ]
 }

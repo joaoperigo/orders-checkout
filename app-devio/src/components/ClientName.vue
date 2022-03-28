@@ -14,28 +14,30 @@ export default {
         }
     },
     methods: {
-async createPedido(e) {
-            e.preventDefault()
+    async createPedido(e) { 
+        e.preventDefault()
 
-            const data = {
-                nome: this.nome,
-            }
+        const data = {
+            nome: this.nome,
+            pedido: null,
+            metodo: null
+        }
 
-            console.log(data)
+        console.log(data)
 
-            const dataJson = JSON.stringify(data)
+        const dataJson = JSON.stringify(data)
 
-            const req = await fetch("http://localhost:3000/pedidos", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: dataJson
-            })
+        const req = await fetch("http://localhost:3000/pedidos", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: dataJson
+        })
 
-            const res = await req.json()
+        const res = await req.json()
 
-            // msg do sistema (colocar)
+        // msg do sistema (colocar)
 
-            // limpar dados (colocar)
+        // limpar dados (colocar)
         }
     }
     

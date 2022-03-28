@@ -1,27 +1,23 @@
 <template>
-
-<form action="">
+{{produtoPedido}}
+<form action="" @submit="pagar($event, 4)">
 
     <div class="item-menu" v-for="produto in produtos" :key="produto.id">
         <div class="mb-3">
-            <h2>#{{produto.id}} | {{produto.titulo}}</h2>
+            <h2>#{{1+produto.id}} | {{produto.titulo}}</h2>
             <img :src="produto.img" :alt="produto.alt">
-            <button class="adicionar-produto" @click="addProduto($event)">+</button>
-        </div>
-        <div class="mb-3">
-            <label for="observacoes" class="form-label">Email address</label>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" v-model="observacoes"></textarea>
-                <label for="floatingTextarea">Observações</label>
-            </div>
         </div>
         <div class="form-group">
             <label for="usr">QTD:</label>
-            <input type="number" id="usr" name="quantity" min="0" max="25">
+            <input type="number" id="usr" name="quantity" min="0" max="25" v-model="produto.qtd" @input="qtdProduto(produto.id, produto.qtd)">
+            <h1>{{produto.qtd}} | {{produto.valor}}</h1>
+        </div>
+        <div>
+            {{produto.valor}}
         </div>
     </div>
 
-    <input type="submit" value="Pagar">
+    <input type="submit" :value="valorTotal">
 
 </form>
 
@@ -36,7 +32,9 @@ export default {
             produto_id: null,
             observacoes: null,
             qtd: null,
-            selecaoProdutos: null
+            selecaoProdutos: null,
+            valorTotal: 0,
+            produtoPedido: []
         }
     },
     methods: {
@@ -46,20 +44,33 @@ export default {
 
             this.produtos = data
         },
-        async addProduto(e) {
-            e.preventDefault()
-            this.selecaoProdutos =  [{
-                    id: 1,
-                    titulo: "Macarrão",
-                    observacoes: "Sem Maionese",
-                    qtd: 2
-                },
-                {
-                    id: 2,
-                    titulo: "Coca-Cola",
-                    observacoes: "Gelo limão",
-                    qtd: 2
-                }]          
+        async qtdProduto(index, qtd) {
+            this.produtoPedido = this.produtoPedido.filter(function(item) { 
+                return item.id !== index;  
+            });
+            if(qtd>0) {
+                this.produtoPedido.push({
+                id: index,
+                qtd: qtd
+                })
+            }
+        },
+        // async calcValor(id, valor, qtd) {
+        //     this.valorTotal = for 
+        // },
+        async pagar(e, id) {
+            e.preventDefault();
+            const pedido = this.produtoPedido
+
+            const dataJson = JSON.stringify({ pedido: pedido });
+
+            const req = await fetch(`http://localhost:3000/pedidos/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: dataJson
+            });
+
+            const res = await req.json();        
         }
     },
     mounted() {
