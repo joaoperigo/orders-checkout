@@ -1,6 +1,7 @@
 <template>
-    <div class="d-flex justify-content-between align-items-center menu-bar">
+    <div class="d-flex justify-content-start align-items-center menu-bar">
         <ButtonToTop />
+        <button>H</button>
         <ButtonPay />
     </div>
 </template>

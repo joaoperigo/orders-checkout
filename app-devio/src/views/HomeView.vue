@@ -7,6 +7,7 @@
           <SliderBestSellers />
           <SearchBar />
           <AllProductsList />
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
   </div>
