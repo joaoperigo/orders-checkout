@@ -1,5 +1,5 @@
 <template>
-{{produtoPedido}}
+{{produtosPedido}}
 <form action="" @submit="pagar($event, 4)">
 
     <div class="accordion" id="lista-produtos">
@@ -18,8 +18,8 @@
                 <div class="accordion-body">
                     <div class="form-group">
                         <label for="usr">QTD:</label>
-                        <input type="number" id="usr" name="quantity" min="0" max="25" v-model="produto.qtd" @input="qtdProduto(produto.id, produto.qtd)">
-                        <h1>{{produto.qtd}} | {{produto.valor}}</h1>
+                        <input type="number" id="usr" name="quantity" min="0" max="25" v-model="produto.qtd" @input="qtdProduto(produto.id, produto.qtd, produto.valor)">
+                        <h1>{{produto.qtd}} | {{produto.valor}} | <span v-if="produto.qtd">{{produto.valor * produto.qtd}}</span></h1>
                     </div>
                     <div>
                         {{produto.valor}}
@@ -50,24 +50,27 @@ export default {
             qtd: null,
             selecaoProdutos: null,
             valorTotal: 0,
-            produtoPedido: []
+            produtosPedido: []
         }
     },
     methods: {
         async getProdutos() {
-            const req = await fetch("http://localhost:3000/produtos")
+            // implementar busca através da barra de pesquisa, estudar se coloca aqui
+            const foo = '?titulo=Macarrão'
+            const req = await fetch(`http://localhost:3000/produtos${foo}`)
             const data = await req.json()
 
             this.produtos = data
         },
-        async qtdProduto(index, qtd) {
-            this.produtoPedido = this.produtoPedido.filter(function(item) { 
+        async qtdProduto(index, qtd, preco) {
+            this.produtosPedido = this.produtosPedido.filter(function(item) { 
                 return item.id !== index;  
             });
             if(qtd>0) {
-                this.produtoPedido.push({
+                this.produtosPedido.push({
                 id: index,
-                qtd: qtd
+                qtd: qtd,
+                soma: qtd*preco
                 })
             }
         },
@@ -76,7 +79,7 @@ export default {
         // },
         async pagar(e, id) {
             e.preventDefault();
-            const pedido = this.produtoPedido
+            const pedido = this.produtosPedido
 
             const dataJson = JSON.stringify({ pedido: pedido });
 
