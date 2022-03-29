@@ -41,64 +41,23 @@
   ],
   "pedidos": [
     {
-      "nome": "Fulano",
-      "id": 1
-    },
-    {
-      "nome": "Fulano",
-      "id": 2
-    },
-    {
-      "nome": "asd",
+      "nome": "qwe",
       "pedido": [
         {
           "id": 1,
-          "qtd": 3
+          "qtd": 2
         },
-        {
-          "id": 3,
-          "qtd": 1
-        }
-      ],
-      "metodo": null,
-      "id": 3
-    },
-    {
-      "nome": "asdfasd",
-      "pedido": [
         {
           "id": 0,
-          "qtd": 1
-        },
-        {
-          "id": 1,
-          "qtd": 4
+          "qtd": 14
         },
         {
           "id": 2,
-          "qtd": 4
+          "qtd": 12
         }
       ],
       "metodo": null,
-      "id": 4
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 5
-    },
-    {
-      "nome": "asddsa",
-      "pedido": null,
-      "metodo": null,
-      "id": 6
-    },
-    {
-      "nome": "2803",
-      "pedido": null,
-      "metodo": null,
-      "id": 7
+      "id": 1
     }
   ]
 }

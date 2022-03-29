@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-12 col-md-6 offset-md-3">
           <MenuBar />
-          <ClientName />
+          <ClientName @clicked="onClickChild" />
           <SliderBestSellers />
           <SearchBar />
-          <AllProductsList />
+          <AllProductsList :idCliente="idCliente" />
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
@@ -29,6 +29,17 @@ export default {
     SliderBestSellers,
     SearchBar,
     AllProductsList
+  },
+  data() {
+        return {
+          idCliente: null
+        }
+    },
+  methods: {
+      onClickChild (id) {
+          this.idCliente = id
+          console.log(this.idCliente)
+      }
   }
 }
 </script>

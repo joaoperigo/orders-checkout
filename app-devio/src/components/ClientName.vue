@@ -3,14 +3,20 @@
         <input type="text" class="form-control" placeholder="Nome do cliente" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="nome">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="createPedido($event)">O</button>
     </div>
+    <Message :msg="msg" v-show="msg" />
 </template>
 
 <script>
+import Message from './Message.vue'
 export default {
     name: 'ClientName',
+      components: {
+    Message
+    },
     data() {
         return {
-            nome: null
+            nome: null,
+            msg: null
         }
     },
     methods: {
@@ -35,12 +41,17 @@ export default {
 
         const res = await req.json()
 
-        // msg do sistema (colocar)
+        // msg from system
+        this.msg = `Pedido do liente #${ res.id },  ${ this.nome } iniciado`
 
-        // limpar dados (colocar)
+        // clean msg
+        setTimeout( () => this.msg = "", 3000 )
+
+        // emite valor ao comp tela 
+        this.$emit('clicked', res.id)
         }
-    }
-    
+    },
+    emits: ['clicked']
 }
 </script>
 

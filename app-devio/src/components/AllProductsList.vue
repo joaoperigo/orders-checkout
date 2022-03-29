@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <input type="submit" :value="valorTotal">
+    <input type="submit" :value="idCliente">
 
 </form>
 
@@ -39,6 +39,9 @@
 <script>
 export default {
     name: 'AllProductsList',
+        props: {
+        idCliente: Number
+    },
     data() {
         return {
             produtos: null,
@@ -77,7 +80,7 @@ export default {
 
             const dataJson = JSON.stringify({ pedido: pedido });
 
-            const req = await fetch(`http://localhost:3000/pedidos/${id}`, {
+            const req = await fetch(`http://localhost:3000/pedidos/${this.idCliente}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: dataJson

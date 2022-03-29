@@ -31,12 +31,12 @@ export default {
         const iniPos = wrapperBusca.getBoundingClientRect().top
         console.log(iniPos)
         if (iniPos < 40) {
-            console.log("sim")
+            // console.log("sim")
             barraBusca.style.display="none"
             this.checaBt = false
         }
         else {
-            console.log("nao")
+            // console.log("nao")
             barraBusca.style.display="block"
             this.checaBt = true
         }
