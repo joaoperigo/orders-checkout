@@ -56,7 +56,7 @@ export default {
     methods: {
         async getProdutos() {
             // implementar busca através da barra de pesquisa, estudar se coloca aqui
-            const foo = '?titulo=Macarrão'
+            const foo = ''
             const req = await fetch(`http://localhost:3000/produtos${foo}`)
             const data = await req.json()
 
