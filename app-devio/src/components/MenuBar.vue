@@ -1,9 +1,9 @@
 <template>
-    <div class="d-flex justify-content-start align-items-center menu-bar">
+    <nav class="d-flex justify-content-start align-items-center menu-bar">
         <ButtonToTop />
         <button>H</button>
         <ButtonPay />
-    </div>
+    </nav>
 </template>
 
 <script>
@@ -26,7 +26,8 @@ export default {
         top: 0;
         left: 0;
         right: 0;
-        padding: 5px 10px;
-        background: #333333;
+        padding: 15px 19px;
+        background: #ffffff;
+        border-bottom: 2px solid #999;
     }
 </style>

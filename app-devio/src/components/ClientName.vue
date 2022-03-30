@@ -1,6 +1,7 @@
 <template>
     <div class="input-group mb-3 client-name">
-        <input type="text" class="form-control" placeholder="Nome do cliente" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="nome">
+        <label for="nome-cliente">Nome do cliente</label>
+        <input type="text" class="form-control" placeholder="Inserir nome do cliente" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="nome" id="nome-cliente">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="createPedido($event)">O</button>
     </div>
     <Message :msg="msg" v-show="msg" />
