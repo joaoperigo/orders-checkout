@@ -22,7 +22,7 @@ import SearchBar from '@/components/SearchBar.vue'
 import AllProductsList from '@/components/AllProductsList.vue'
 
 export default {
-  name: 'GarcomView',
+  name: 'CheckoutView',
   components: {
     MenuBar,
     ClientName,

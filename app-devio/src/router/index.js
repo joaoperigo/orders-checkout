@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import GarcomView from '../views/GarcomView.vue'
+import CheckoutView from '../views/CheckoutView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: GarcomView
+    component: CheckoutView
   },
   {
     path: '/cozinha',
