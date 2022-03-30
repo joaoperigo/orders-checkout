@@ -15,6 +15,7 @@
         <div>{{pedido.nome}}</div>
         <div v-for="lista in pedido.pedido" :key="lista.id">
             {{lista.qtd}} x titulo{{lista.id}}
+            <!-- lista.id é provisorio -->
         </div>
         <div>
           <select name="status" class="status" @change="updatedPedido($event, pedido.id)">
@@ -51,12 +52,13 @@
         // rescue status
         this.getStatus();
       },
-      async getListapedido() {
-        const req = await fetch("http://localhost:3000/pedidos?id=5")
-        const data = await req.json();
-        this.pedidos = data;
-        console.log(data)
-      },
+      // resolver pega titulo produto pelo id do pedido[]
+      // async getListapedido() {
+      //   const req = await fetch("http://localhost:3000/pedidos?id=5")
+      //   const data = await req.json();
+      //   this.pedidos = data;
+      //   console.log(data)
+      // },
       async getStatus() {
         const req = await fetch("http://localhost:3000/status");
         const data = await req.json();
@@ -99,7 +101,7 @@
     },
     mounted() {
       this.getPedidos()
-      this.getListapedido()
+      // this.getListapedido() // resolver pega titulo produto pelo id do pedido[]
     },
     components: {
       Message
