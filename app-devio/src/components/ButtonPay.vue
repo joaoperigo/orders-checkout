@@ -4,6 +4,6 @@
 
 <script>
 export default {
-    name: 'ButtonPay'
+    name: 'ButtonPay',
 }
 </script>

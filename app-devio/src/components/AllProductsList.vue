@@ -1,6 +1,6 @@
 <template>
 {{produtosPedido}}
-<form action="" @submit="pagar($event, 4)">
+<!-- <form action="" @submit="pagar($event)"> -->
 
     <div class="accordion" id="lista-produtos">
         <div class="accordion-item" v-for="produto in produtos" :key="produto.id">
@@ -30,9 +30,11 @@
         </div>
     </div>
 
-    <input type="submit" :value="idCliente">
+    <!-- <input type="submit" :value="this.valorTotal">
 
-</form>
+</form> -->
+
+<button @click="pagar($event)">{{this.valorTotal}}</button>
 
 </template>
 
@@ -59,7 +61,6 @@ export default {
             const foo = ''
             const req = await fetch(`http://localhost:3000/produtos${foo}`)
             const data = await req.json()
-
             this.produtos = data
         },
         async qtdProduto(index, qtd, preco) {
@@ -72,12 +73,13 @@ export default {
                 qtd: qtd,
                 soma: qtd*preco
                 })
+                this.calcValor()
             }
         },
-        // async calcValor(id, valor, qtd) {
-        //     this.valorTotal = for 
-        // },
-        async pagar(e, id) {
+        async calcValor() {
+            this.valorTotal = this.produtosPedido.map(conta => conta.soma).reduce((acc, soma) => soma + acc);
+        },
+        async pagar(e) {
             e.preventDefault();
             const pedido = this.produtosPedido
 
