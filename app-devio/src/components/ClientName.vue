@@ -26,7 +26,9 @@ export default {
         const data = {
             nome: this.nome,
             pedido: null,
-            metodo: null
+            metodo: null,
+            status: "solicitado"
+            // na verdade seria "solicitando" pois é criado quando começa o atendimento
         }
 
         console.log(data)

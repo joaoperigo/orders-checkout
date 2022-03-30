@@ -41,327 +41,69 @@
   ],
   "pedidos": [
     {
-      "nome": "qwe",
+      "nome": "asd",
       "pedido": [
-        {
-          "id": 1,
-          "qtd": 2
-        },
         {
           "id": 0,
-          "qtd": 14
-        },
-        {
-          "id": 2,
-          "qtd": 12
+          "qtd": 23,
+          "soma": 989
         }
       ],
       "metodo": null,
-      "id": 1
-    },
-    {
-      "nome": "qwe",
-      "pedido": [
-        {
-          "id": 2,
-          "qtd": 3,
-          "soma": 36
-        }
-      ],
-      "metodo": null,
-      "id": 2
-    },
-    {
-      "nome": "dasd",
-      "pedido": null,
-      "metodo": null,
+      "status": "Finalizado",
       "id": 3
     },
     {
-      "nome": "qwerqwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 4
-    },
-    {
-      "nome": "qwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 5
-    },
-    {
-      "nome": "qweer",
-      "pedido": null,
-      "metodo": null,
-      "id": 6
-    },
-    {
-      "nome": "eqw",
-      "pedido": null,
-      "metodo": null,
-      "id": 7
-    },
-    {
-      "nome": "ewq",
-      "pedido": null,
-      "metodo": null,
-      "id": 8
-    },
-    {
-      "nome": "we",
+      "nome": "asd",
       "pedido": [
-        {
-          "id": 0,
-          "qtd": 2,
-          "soma": 86
-        },
         {
           "id": 1,
           "qtd": 3,
           "soma": 69
         },
         {
+          "id": 0,
+          "qtd": 21,
+          "soma": 903
+        },
+        {
           "id": 2,
-          "qtd": 4,
-          "soma": 48
+          "qtd": 1,
+          "soma": 12
         }
       ],
       "metodo": null,
-      "id": 9
-    },
-    {
-      "nome": "qwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 10
-    },
-    {
-      "nome": "qwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 11
-    },
-    {
-      "nome": "qwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 12
-    },
-    {
-      "nome": "da",
-      "pedido": null,
-      "metodo": null,
-      "id": 13
+      "status": "solicitado",
+      "id": 4
     },
     {
       "nome": "dsa",
-      "pedido": null,
-      "metodo": null,
-      "id": 14
-    },
-    {
-      "nome": "dsa",
-      "pedido": null,
-      "metodo": null,
-      "id": 15
-    },
-    {
-      "nome": "123",
-      "pedido": null,
-      "metodo": null,
-      "id": 16
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 17
-    },
-    {
-      "nome": "qew",
-      "pedido": null,
-      "metodo": null,
-      "id": 18
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 19
-    },
-    {
-      "nome": "qwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 20
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 21
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 22
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 23
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 24
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 25
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 26
-    },
-    {
-      "nome": "weq",
-      "pedido": null,
-      "metodo": null,
-      "id": 27
-    },
-    {
-      "nome": "wqe",
-      "pedido": null,
-      "metodo": null,
-      "id": 28
-    },
-    {
-      "nome": "qwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 29
-    },
-    {
-      "nome": "wqe",
-      "pedido": null,
-      "metodo": null,
-      "id": 30
-    },
-    {
-      "nome": "qw",
-      "pedido": null,
-      "metodo": null,
-      "id": 31
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 32
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 33
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 34
-    },
-    {
-      "nome": "das",
-      "pedido": null,
-      "metodo": null,
-      "id": 35
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 36
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 37
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 38
-    },
-    {
-      "nome": "qwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 39
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 40
-    },
-    {
-      "nome": "qwe",
-      "pedido": null,
-      "metodo": null,
-      "id": 41
-    },
-    {
-      "nome": "dsa",
-      "pedido": null,
-      "metodo": null,
-      "id": 42
-    },
-    {
-      "nome": "asd",
-      "pedido": null,
-      "metodo": null,
-      "id": 43
-    },
-    {
-      "nome": "sd",
-      "pedido": null,
-      "metodo": null,
-      "id": 44
-    },
-    {
-      "nome": "asd",
       "pedido": [
         {
+          "id": 1,
+          "qtd": 3,
+          "soma": 69
+        },
+        {
           "id": 0,
-          "qtd": 212,
-          "soma": 9116
+          "qtd": 21,
+          "soma": 903
+        },
+        {
+          "id": 2,
+          "qtd": 1,
+          "soma": 12
         }
       ],
-      "metodo": null,
-      "id": 45
-    },
-    {
-      "nome": "dsa",
-      "pedido": null,
-      "metodo": null,
-      "id": 46
+      "status": "Solicitado",
+      "id": 5
     },
     {
       "nome": "qwe",
       "pedido": null,
       "metodo": null,
-      "id": 47
+      "status": "solicitado",
+      "id": 6
     }
   ]
 }

@@ -71,6 +71,7 @@ export default {
                 this.produtosPedido.push({
                 id: index,
                 qtd: qtd,
+                // titulo: titulo,
                 soma: qtd*preco
                 })
                 this.calcValor()
