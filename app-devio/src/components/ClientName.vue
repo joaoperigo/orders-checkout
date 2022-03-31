@@ -1,5 +1,5 @@
 <template>
-    <div class="form-group client-name-group">
+    <div class="form-group client-name-group mt-4 border-top pt-4">
         <label for="nome-cliente"><h2>Nome do cliente</h2></label>
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Inserir nome do cliente" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="nome" id="nome-cliente">

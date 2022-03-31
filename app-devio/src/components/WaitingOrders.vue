@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container-waiting-orders {
     border-top: 1px solid #666;
 }
@@ -53,6 +53,9 @@ export default {
     color: #f4f4f4;
 }
 .accordion-button::after {
-    margin: 0 auto;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    // color: $white;
 }
 </style>

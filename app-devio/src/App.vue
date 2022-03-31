@@ -17,7 +17,10 @@
   <router-view/>
 </template>
 
-<style>
+<style lang="scss">
+
+@import './scss/Style.scss';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -44,8 +47,9 @@ nav.menu-telas a {
 } */
 
 div.item-menu-telas {
-  border: 1px solid #666;
+  border: 1px solid $dark;
 }
+
 /* h2 {
   text-transform: uppercase;
 } */
