@@ -1,9 +1,11 @@
 <template>
-{{produtosPedido}}
-<!-- <form action="" @submit="pagar($event)"> -->
+    {{produtosPedido}}
+    <div class="text-center wrapper-button-pay">
+        <button @click="pagar($event)" class="mx-auto button-pay">Pagar: R${{this.valorTotal}}</button>
+    </div>
 
     <div class="accordion" id="lista-produtos">
-        <div class="accordion-item" v-for="produto in produtos" :key="produto.id">
+        <div class="accordion-item mb-4" v-for="produto in produtos" :key="produto.id">
 
             <h2 class="accordion-header" :id="`heading${produto.id}`">
                 <button class="accordion-button d-flex justify-content-between collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#collapse${produto.id}`" aria-expanded="false" :aria-controls="`collapse${produto.id}`">
@@ -29,13 +31,6 @@
 
         </div>
     </div>
-
-    <!-- <input type="submit" :value="this.valorTotal">
-
-</form> -->
-
-<button @click="pagar($event)">{{this.valorTotal}}</button>
-
 </template>
 
 <script>
@@ -100,3 +95,52 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+    * {
+        background-color: transparent;
+        border-width: 0;
+        outline: none;
+    }
+    .wrapper-button-pay {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 4;
+        padding-top: 15px;
+    }
+    .button-pay {
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translateY(-50%) translateX(-50%);
+        border-radius: 10px;
+        background-color: var(--dark);
+        border: solid 1px var(--dark);
+        padding: 10px 15px;
+        color: var(--light);
+    }
+    .accordion-item {
+        background-color: transparent;
+        border: 1px solid var(--dark);
+        border-radius: 10px;
+    }
+    // .accordion-item:first-of-type .accordion-button  {
+    //     border-top-left-radius: 10px;
+    //     border-top-right-radius: 10px;
+    // }
+    .accordion-button {
+        background-color: transparent;
+    }
+    // .accordion-collapse {
+    //     border-bottom-left-radius: 10px;
+    //     border-bottom-right-radius: 10px;
+    //     border: 1px solid var(--dark);
+    //     border-top-width: 0;
+    // }
+    .accordion-button:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 0.25rem var(--primary);
+        border-radius: 10px;
+    }
+</style>

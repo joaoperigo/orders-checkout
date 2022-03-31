@@ -1,5 +1,5 @@
 <template>
-    <button>Pagar: R$50,00</button>
+    <!-- <button>Pagar: R$50,00</button> -->
 </template>
 
 <script>

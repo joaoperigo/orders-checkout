@@ -62,10 +62,10 @@ export default {
 }
 </script>
 <style scoped>
-#wrapper-barra-busca {
-    pointer-events: none;
-}
-#wrapper-barra-busca * {
-    pointer-events: auto;
-}
+  #wrapper-barra-busca {
+      pointer-events: none;
+  }
+  #wrapper-barra-busca * {
+      pointer-events: auto;
+  }
 </style>

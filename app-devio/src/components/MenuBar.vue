@@ -2,7 +2,7 @@
     <nav class="d-flex align-items-center menu-bar">
         <ButtonToTop />
         <!-- <button>H</button> -->
-        <ButtonPay />
+        <!-- <ButtonPay /> -->
     </nav>
 </template>
 
@@ -15,6 +15,9 @@ export default {
   components: {
     ButtonToTop,
     ButtonPay
+  },
+  props: {
+    botaoValorTotal: Number
   }
 }
 </script>
@@ -27,7 +30,7 @@ export default {
         left: 0;
         right: 0;
         padding: 15px 19px;
-        background: #ffffff;
-        border-bottom: 2px solid #999;
+        background: var(--light);
+        border-bottom: 2px solid var(--neutralDark);
     }
 </style>
