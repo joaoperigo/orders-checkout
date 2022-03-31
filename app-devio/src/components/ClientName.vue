@@ -1,8 +1,10 @@
 <template>
-    <div class="input-group mb-3 client-name">
-        <label for="nome-cliente">Nome do cliente</label>
-        <input type="text" class="form-control" placeholder="Inserir nome do cliente" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="nome" id="nome-cliente">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="createPedido($event)">O</button>
+    <div class="form-group client-name-group">
+        <label for="nome-cliente"><h2>Nome do cliente</h2></label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Inserir nome do cliente" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="nome" id="nome-cliente">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="createPedido($event)">O</button>
+        </div>
     </div>
     <Message :msg="msg" v-show="msg" />
 </template>
@@ -59,7 +61,7 @@ export default {
 </script>
 
 <style scoped>
-.client-name {
-    padding-top: 100px;
-}
+/* .client-name-group {
+    padding-top: 15px;
+} */
 </style>

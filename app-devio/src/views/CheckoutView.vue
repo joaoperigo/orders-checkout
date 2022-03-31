@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-12 col-md-6 offset-md-3">
           <MenuBar />
+          <WaitingOrders />
           <ClientName @clicked="onClickChild" />
           <SliderBestSellers />
           <SearchBar />
@@ -16,6 +17,7 @@
 <script>
 // @ is an alias to /src
 import MenuBar from '@/components/MenuBar.vue'
+import WaitingOrders from '@/components/WaitingOrders.vue'
 import ClientName from '@/components/ClientName.vue'
 import SliderBestSellers from '@/components/SliderBestSellers.vue'
 import SearchBar from '@/components/SearchBar.vue'
@@ -25,6 +27,7 @@ export default {
   name: 'CheckoutView',
   components: {
     MenuBar,
+    WaitingOrders,
     ClientName,
     SliderBestSellers,
     SearchBar,

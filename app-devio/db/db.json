@@ -69,5 +69,27 @@
       "tipo": "Finalizado"
     }
   ],
-  "pedidos": []
+  "pedidos": [
+    {
+      "nome": "dsa",
+      "pedido": null,
+      "metodo": null,
+      "status": "solicitado",
+      "id": 1
+    },
+    {
+      "nome": "jojo",
+      "pedido": null,
+      "metodo": null,
+      "status": "produzindo",
+      "id": 1
+    },
+    {
+      "nome": "asd",
+      "pedido": null,
+      "metodo": null,
+      "status": "solicitado",
+      "id": 2
+    }
+  ]
 }

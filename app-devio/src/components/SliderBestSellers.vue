@@ -1,14 +1,15 @@
 <template>
-    <carousel :items-to-show="3">
-        <slide v-for="slide in produtosDestaque" :key="slide.id">
-            <p>#{{slide.id+1}} {{slide.titulo}}</p>
-            <img src="http://placekitten.com/50/50" alt="">
-        </slide>
-        <template #addons>
-        <navigation />
-        <pagination />
-        </template>
-    </carousel>
+  <h2>Destaques</h2>
+  <carousel :items-to-show="3">
+      <slide v-for="slide in produtosDestaque" :key="slide.id">
+          <p>#{{slide.id+1}} {{slide.titulo}}</p>
+          <img src="http://placekitten.com/50/50" alt="">
+      </slide>
+      <template #addons>
+      <navigation />
+      <pagination />
+      </template>
+  </carousel>
 
 </template>
 

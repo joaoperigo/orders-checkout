@@ -30,7 +30,7 @@ export default {
         //const topPos = wrapperBusca.offsetTop
         const iniPos = wrapperBusca.getBoundingClientRect().top
         console.log(iniPos)
-        if (iniPos < 40) {
+        if (iniPos < 70) {
             // console.log("sim")
             barraBusca.style.display="none"
             this.checaBt = false
