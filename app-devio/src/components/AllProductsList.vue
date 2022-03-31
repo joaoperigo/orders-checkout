@@ -6,7 +6,7 @@
         <div class="accordion-item" v-for="produto in produtos" :key="produto.id">
 
             <h2 class="accordion-header" :id="`heading${produto.id}`">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="`#collapse${produto.id}`" aria-expanded="true" :aria-controls="`collapse${produto.id}`">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#collapse${produto.id}`" aria-expanded="false" :aria-controls="`collapse${produto.id}`">
                     <span>
                         #{{1+produto.id}} | {{produto.titulo}}
                     </span>
