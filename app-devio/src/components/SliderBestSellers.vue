@@ -1,14 +1,16 @@
 <template>
-  <h2>Destaques</h2>
-  <carousel :items-to-show="3">
+  <h2 class="mt-4 border-top">Destaques</h2>
+  <carousel :items-to-show="3.2">
       <slide v-for="slide in produtosDestaque" :key="slide.id">
-          <p>#{{slide.id+1}} {{slide.titulo}}</p>
+        <div class="slide-best-seller">
+                    <p>#{{slide.id+1}} {{slide.titulo}}</p>
           <img src="http://placekitten.com/50/50" alt="">
+        </div> 
       </slide>
-      <template #addons>
-      <navigation />
-      <pagination />
-      </template>
+        <!-- <template #addons>
+        <navigation />
+        <pagination />
+        </template> -->
   </carousel>
 
 </template>
@@ -43,9 +45,12 @@ export default {
 }
 </script>
 
-<style>
-.carousel__prev--in-active,
+<style lang="scss">
+/* .carousel__prev--in-active,
 .carousel__next--in-active {
   display: none;
+} */
+.slide-best-seller {
+  border: solid 1px var(--dark);
 }
 </style>

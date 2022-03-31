@@ -1,7 +1,7 @@
 <template>
-    <nav class="d-flex justify-content-start align-items-center menu-bar">
+    <nav class="d-flex align-items-center menu-bar">
         <ButtonToTop />
-        <button>H</button>
+        <!-- <button>H</button> -->
         <ButtonPay />
     </nav>
 </template>

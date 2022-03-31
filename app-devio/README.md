@@ -1,5 +1,9 @@
 # app-devio
 
+`git clone https://github.com/joaoperigo/orders-checkout`
+`npm install`
+`cd app-devio`
+
 ## Project setup
 ```
 npm install

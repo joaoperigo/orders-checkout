@@ -1,9 +1,16 @@
 <template>
-    <div class="input-group mb-3 d-flex justify-content-end sticky-top" id="wrapper-barra-busca">
+<div class="form-group client-name-group mt-4 pt-2 sticky-top" id="wrapper-barra-busca">
+    <!-- <label for="barra-busca" class="w-100"><h2>Pesquisar</h2></label> -->
+    <div class="input-group d-flex justify-content-end">
         <input type="text" class="form-control barra-busca" placeholder="Digite o id ou nome do produto" aria-label="Recipient's username" aria-describedby="button-addon2" id="barra-busca" ref="focaBar">
-        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca" v-show="checaBt" >O</button>
-        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca-sobe" v-show="!checaBt" @click="toTop()">n</button>
+        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca" v-show="checaBt" >
+          <img src="@/assets/lupa.svg" alt="" class="img-fluid">
+        </button>
+        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca-sobe" v-show="!checaBt" @click="toTop()">
+          <img src="@/assets/lupa.svg" alt="" class="img-fluid">
+        </button>
     </div>
+</div>
 </template>
 
 <script>

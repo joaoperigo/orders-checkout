@@ -1,9 +1,9 @@
 <template>
-    <div class="form-group client-name-group mt-4 border-top pt-4">
-        <label for="nome-cliente"><h2>Nome do cliente</h2></label>
+    <div class="form-group client-name-group mt-4 border-top pt-2">
+        <label for="nome-cliente" class="w-100"><h2>Nome do cliente</h2></label>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Inserir nome do cliente" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="nome" id="nome-cliente">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="createPedido($event)">O</button>
+            <input type="text" class="form-control me-3" placeholder="Inserir nome do cliente" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="nome" id="nome-cliente">
+            <button class="btn btn-dark" type="button" id="button-addon2" @click="createPedido($event)">Ok</button>
         </div>
     </div>
     <Message :msg="msg" v-show="msg" />
@@ -60,8 +60,14 @@ export default {
 }
 </script>
 
-<style scoped>
-/* .client-name-group {
-    padding-top: 15px;
-} */
+<style lang="scss" scoped>
+
+.form-control {
+    background-color: var(--white);
+    border-color: var(--dark);
+    border-radius: 5px !important;
+}
+.btn-dark {
+    border-radius: 5px !important;
+}
 </style>
