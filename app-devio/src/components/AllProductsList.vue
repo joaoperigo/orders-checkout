@@ -23,7 +23,7 @@
                                 <div class="col">
                                     <div class="mb-3">
                                         <label class="form-label">Quantidade
-                                            <input type="number" class="form-control text-center" name="quantity" min="0" max="25" v-model="produto.qtd" @input="qtdProduto(produto.id, produto.qtd, produto.valor, produto.observacoes)" placeholder="0">
+                                            <input type="number" class="form-control text-center" name="quantity" min="0" max="25" v-model="produto.qtd" @input="qtdProduto(produto.id, produto.qtd, produto.valor, produto.titulo, produto.observacoes)" placeholder="0">
                                         </label>
                                     </div>
                                 </div>
@@ -63,7 +63,8 @@ export default {
     data() {
         return {
             produtos: null,
-            produto_id: null,
+            // produto_id: null, //devia ter usado como foreign key 
+            tituloProduto: null,
             observacoes: null,
             qtd: null,
             selecaoProdutos: null,
@@ -79,7 +80,7 @@ export default {
             const data = await req.json()
             this.produtos = data
         },
-        async qtdProduto(index, qtd, preco, observacoes) {
+        async qtdProduto(index, qtd, preco, titulo, observacoes) {
             this.produtosPedido = this.produtosPedido.filter(function(item) { 
                 return item.id !== index;  
             });
@@ -90,8 +91,9 @@ export default {
                 this.produtosPedido.push({
                     id: index,
                     qtd: qtd,
-                    // titulo: titulo,
+                    tituloProduto: titulo,
                     soma: qtd*preco,
+
                     observacoes: auxObservacoes
                 })
                 this.calcValor()

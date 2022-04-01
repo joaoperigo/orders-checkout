@@ -1,29 +1,48 @@
 <template>
-<div id="pedido-table">
-    <Message :msg="msg" v-show="msg" />
-    <div>
-      <div id="pedido-table-heading">
-        <div class="order-id">#:</div>
-        <div>Cliente: </div>
-        <div>Pedido: </div>
-        <div>Qtd: </div>
-      </div>
-    </div>
-    <div id="pedido-table-rows">
-      <div class="pedido-table-row" v-for="pedido in pedidos" :key="pedido.id">
-        <div class="order-number">{{pedido.id}}</div>
-        <div>{{pedido.nome}}</div>
-        <div v-for="lista in pedido.pedido" :key="lista.id">
-            {{lista.qtd}} x titulo{{lista.id}}
-            <!-- lista.id é provisorio -->
-        </div>
-        <div>
-          <select name="status" class="status" @change="updatedPedido($event, pedido.id)">
-            <option value="">Selecione </option>
-            <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="pedido.status == s.tipo">{{ s.tipo }}</option>
-          </select>
-          <button class="delete-btn" @click="deletePedido(pedido.id)">Cancelar</button>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+      <Message :msg="msg" v-show="msg" />
+          <table class="mx-auto table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Qtd</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Status</th>
+                <th scope="col">Cancelar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="pedido in pedidos" :key="pedido.id">
+                <th scope="row">#{{pedido.id}}</th>
+                <td>{{pedido.nome}}</td>
+                <td>
+                  <p class="qtd-produto" v-for="lista in pedido.pedido" :key="lista.id">
+                    <b>{{lista.qtd}}</b> 
+                  </p>
+                </td>
+                <td>
+                  <p class="qtd-produto" v-for="lista in pedido.pedido" :key="lista.id">
+                    <b> {{lista.tituloProduto}} </b> 
+                  </p>
+                </td>
+                <td>
+                  <div>
+                    <select name="status" class="status" @change="updatedPedido($event, pedido.id)">
+                      <option value="">Selecione </option>
+                      <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="pedido.status == s.tipo">{{ s.tipo }}</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <button class="delete-btn" @click="deletePedido(pedido.id)">Cancelar</button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
       </div>
     </div>
   </div>
@@ -38,7 +57,9 @@
         pedidos: null,
         pedido_id: null,
         status: [],
-        msg: null
+        msg: null,
+        produtos: null,
+        pedidoNome: null
       }
     },
     components: {
@@ -53,11 +74,10 @@
         this.getStatus();
       },
       // resolver pega titulo produto pelo id do pedido[]
-      // async getListapedido() {
-      //   const req = await fetch("http://localhost:3000/pedidos?id=5")
+      // async getProduto() {
+      //   const req = await fetch("http://localhost:3000/produtos")
       //   const data = await req.json();
-      //   this.pedidos = data;
-      //   console.log(data)
+      //   this.produtos = data;
       // },
       async getStatus() {
         const req = await fetch("http://localhost:3000/status");
@@ -101,10 +121,22 @@
     },
     mounted() {
       this.getPedidos()
-      // this.getListapedido() // resolver pega titulo produto pelo id do pedido[]
+      // this.getProduto()
     },
     components: {
       Message
     }
   }
 </script>
+
+
+
+<style lang="scss" scoped>
+  td, th {
+    padding: 15px 25px;
+    border-bottom: solid 1px var(--dark);
+  }
+  tr:nth-child(even), thead tr {
+    background-color: var(--neutral);
+  }
+</style>

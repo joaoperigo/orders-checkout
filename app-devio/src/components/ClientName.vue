@@ -30,7 +30,7 @@ export default {
             nome: this.nome,
             pedido: null,
             metodo: null,
-            status: "solicitado"
+            status: "Solicitado"
             // na verdade seria "solicitando" pois é criado quando começa o atendimento
         }
 
