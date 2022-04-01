@@ -73,13 +73,5 @@
       "tipo": "Retirado"
     }
   ],
-  "pedidos": [
-    {
-      "nome": "ewqr",
-      "pedido": null,
-      "metodo": null,
-      "status": "Solicitado",
-      "id": 1
-    }
-  ]
+  "pedidos": []
 }
