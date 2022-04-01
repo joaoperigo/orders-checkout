@@ -73,5 +73,48 @@
       "tipo": "Retirado"
     }
   ],
-  "pedidos": []
+  "pedidos": [
+    {
+      "nome": null,
+      "pedido": null,
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "dsasd",
+      "pedido": null,
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 2
+    },
+    {
+      "nome": "fdasdasd",
+      "pedido": null,
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 3
+    },
+    {
+      "nome": "2",
+      "pedido": null,
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 4
+    },
+    {
+      "nome": "3",
+      "pedido": null,
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 5
+    },
+    {
+      "nome": "0",
+      "pedido": null,
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 6
+    }
+  ]
 }

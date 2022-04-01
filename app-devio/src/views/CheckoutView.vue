@@ -4,9 +4,7 @@
       <div class="col-12 col-md-6 offset-md-3">
           <MenuBar />
           <WaitingOrders />
-          <ClientName @clicked="onClickChild" />
-          <SliderBestSellers />
-          <SearchBar />
+          <ClientName @clicked="passarIdCliente" />
           <AllProductsList :idCliente="idCliente" />
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
@@ -19,8 +17,6 @@
 import MenuBar from '@/components/MenuBar.vue'
 import WaitingOrders from '@/components/WaitingOrders.vue'
 import ClientName from '@/components/ClientName.vue'
-import SliderBestSellers from '@/components/SliderBestSellers.vue'
-import SearchBar from '@/components/SearchBar.vue'
 import AllProductsList from '@/components/AllProductsList.vue'
 
 export default {
@@ -29,8 +25,6 @@ export default {
     MenuBar,
     WaitingOrders,
     ClientName,
-    SliderBestSellers,
-    SearchBar,
     AllProductsList
   },
   data() {
@@ -39,9 +33,9 @@ export default {
         }
     },
   methods: {
-      onClickChild (id) {
+      passarIdCliente (id) {
           this.idCliente = id
-          console.log(this.idCliente)
+          // console.log(this.idCliente)
       }
   }
 }

@@ -2,11 +2,11 @@
 <div class="form-group client-name-group mt-4 pt-2 sticky-top" id="wrapper-barra-busca">
     <!-- <label for="barra-busca" class="w-100"><h2>Pesquisar</h2></label> -->
     <div class="input-group d-flex justify-content-end">
-        <input type="text" class="form-control barra-busca" placeholder="Digite o id ou nome do produto" aria-label="Recipient's username" aria-describedby="button-addon2" id="barra-busca" ref="focaBar">
-        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca" v-show="checaBt" >
+        <input type="text" class="form-control barra-busca" placeholder="Digite o id ou nome do produto" aria-label="Recipient's username" aria-describedby="button-addon2" id="barra-busca" ref="focaBar" v-model="inputValorBusca">
+        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca" v-show="checaBt" @click="buscaProduto($event)">
           <img src="@/assets/lupa.svg" alt="" class="img-fluid">
         </button>
-        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca-sobe" v-show="!checaBt" @click="toTop()">
+        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca-sobe" v-show="!checaBt" @click="toTop(); buscaProduto($event)">
           <img src="@/assets/lupa.svg" alt="" class="img-fluid">
         </button>
     </div>
@@ -19,7 +19,8 @@ export default {
     data() {
     return {
       windowTop: 0,
-      checaBt: true
+      checaBt: true,
+      inputValorBusca: null
     };
   },
   mounted() {
@@ -57,8 +58,12 @@ export default {
         setTimeout(() => {
             this.$refs.focaBar.focus()
         }, 800)
+    },
+    buscaProduto(e) {
+      this.$emit('clicouBusca', this.inputValorBusca)
     }
-  }
+  },
+  emits: ['clicouBusca']
 }
 </script>
 <style scoped>

@@ -1,4 +1,6 @@
 <template>
+    <SliderBestSellers />
+    <SearchBar @clicouBusca="passarValorBusca" />
     <form action="" @click="pagar($event)">
 
         <div class="text-center wrapper-button-pay">
@@ -55,10 +57,18 @@
 </template>
 
 <script>
+import SliderBestSellers from '@/components/SliderBestSellers.vue'
+
+import SearchBar from './SearchBar.vue'
+
 export default {
     name: 'AllProductsList',
         props: {
         idCliente: Number
+    },
+    components: {
+        SearchBar,
+        SliderBestSellers
     },
     data() {
         return {
@@ -69,14 +79,13 @@ export default {
             qtd: null,
             selecaoProdutos: null,
             valorTotal: 0,
-            produtosPedido: []
+            produtosPedido: [],
+            valorBusca: ''
         }
     },
     methods: {
         async getProdutos() {
-            // implementar busca através da barra de pesquisa, estudar se coloca aqui
-            const foo = ''
-            const req = await fetch(`http://localhost:3000/produtos${foo}`)
+            const req = await fetch(`http://localhost:3000/produtos/${this.valorBusca}`)
             const data = await req.json()
             this.produtos = data
         },
@@ -118,6 +127,13 @@ export default {
             });
 
             const res = await req.json();        
+        },
+        passarValorBusca (vB) {
+            let checaTipo = /^\d+$/.test(vB)
+            if(checaTipo) this.valorBusca = `?id=${vB}`
+            else this.valorBusca = `?titulo=${vB}`
+            this.getProdutos()
+            console.log(this.valorBusca)
         }
     },
     mounted() {
