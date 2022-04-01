@@ -36,7 +36,11 @@ Implement form layout in search, like insert name
 Suggest client name edit
 Install font inside application with @font-face, instead of google cdn
 Started Observations, but couldn’t finish
-Missed some extras in requirements
+Missed some extras in requirements, like pusher, order details, payment methods.
 Need mor time to get better layout
 Need more time to organize scss and css style structure
 For now retirada (withdraw)  is a copy of cozinha (kitchen)
+Npm vue3-carousel warning when get fetch() values
+WaitingOrders get issue when don't have orders and have to reload page
+Chose better colors values for vars
+Chose better when use portugues and english ;)

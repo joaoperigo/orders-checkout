@@ -1,3 +1,85 @@
 {
-  "produtos": []
+  "produtos": [
+    {
+      "id": 0,
+      "titulo": "Macarrão",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 1,
+      "valor": 43,
+      "destaque": true
+    },
+    {
+      "id": 1,
+      "titulo": "Prato feito",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 10,
+      "valor": 23,
+      "destaque": true
+    },
+    {
+      "id": 2,
+      "titulo": "Batata frita",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 15,
+      "valor": 12,
+      "destaque": false
+    },
+    {
+      "id": 3,
+      "titulo": "Cerveja",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 23,
+      "valor": 12,
+      "destaque": true
+    },
+    {
+      "id": 4,
+      "titulo": "Cachaça",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 23,
+      "valor": 12,
+      "destaque": true
+    },
+    {
+      "id": 5,
+      "titulo": "Coca-Cola",
+      "img": "http://placekitten.com/100/100",
+      "alt": "Gatinhos",
+      "total": 23,
+      "valor": 12,
+      "destaque": true
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "tipo": "Solicitado"
+    },
+    {
+      "id": 2,
+      "tipo": "Produzindo"
+    },
+    {
+      "id": 3,
+      "tipo": "Finalizado"
+    },
+    {
+      "id": 3,
+      "tipo": "Retirado"
+    }
+  ],
+  "pedidos": [
+    {
+      "nome": "ewqr",
+      "pedido": null,
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 1
+    }
+  ]
 }

@@ -30,7 +30,7 @@ export default {
     name: 'WaitingOrders',
     data() {
         return {
-            pedidosEmEspera: null
+            pedidosEmEspera: ''
         }
     },
     methods: {
