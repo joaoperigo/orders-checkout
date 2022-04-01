@@ -47,7 +47,7 @@ export default {
         const res = await req.json()
 
         // msg from system
-        this.msg = `Pedido do liente #${ res.id },  ${ this.nome } iniciado`
+        this.msg = `Pedido do cliente #${ res.id },  ${ this.nome } iniciado`
 
         // clean msg
         setTimeout( () => this.msg = "", 3000 )

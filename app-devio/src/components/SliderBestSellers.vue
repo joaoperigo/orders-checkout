@@ -3,8 +3,9 @@
   <carousel :items-to-show="3.2">
       <slide v-for="slide in produtosDestaque" :key="slide.id">
         <div class="slide-best-seller">
-                    <p>#{{slide.id+1}} {{slide.titulo}}</p>
           <img src="http://placekitten.com/50/50" alt="">
+          <p>#{{slide.id+1}} {{slide.titulo}}</p>
+          <button @click="abreProduto(slide.id)" class="mx-auto">V</button>
         </div> 
       </slide>
         <!-- <template #addons>
@@ -37,6 +38,17 @@ export default {
     const req = await fetch(`http://localhost:3000/produtos/?destaque=true`)
     const data = await req.json()
     this.produtosDestaque = data
+    },
+    abreProduto(id) {
+      // document.getElementById(`heading${id}`).scrollIntoView({
+      //   behavior: 'smooth'
+      // });
+      // console.log(`#heading${id}`)
+      let itemAcordeao = document.querySelector(`#heading${id}`)
+      let topoElemento = itemAcordeao.offsetTop - 100;
+      window.scroll({ top: topoElemento, behavior: "smooth" });
+      let itemAcordeaoBotao = document.querySelector(`#heading${id} button`)
+      if(itemAcordeaoBotao.classList.contains('collapsed')) itemAcordeaoBotao.click()
     }
   },
   mounted() {

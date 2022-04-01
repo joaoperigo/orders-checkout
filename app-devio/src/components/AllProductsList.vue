@@ -1,36 +1,57 @@
 <template>
-    {{produtosPedido}}
-    <div class="text-center wrapper-button-pay">
-        <button @click="pagar($event)" class="mx-auto button-pay">Pagar: R${{this.valorTotal}}</button>
-    </div>
+    <form action="" @click="pagar($event)">
 
-    <div class="accordion" id="lista-produtos">
-        <div class="accordion-item mb-4" v-for="produto in produtos" :key="produto.id">
+        <div class="text-center wrapper-button-pay">
+            <input type="submit" class="mx-auto button-pay" :value="`Pagar: R$${valorTotal}`">
+        </div>
 
-            <h2 class="accordion-header" :id="`heading${produto.id}`">
-                <button class="accordion-button d-flex justify-content-between collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#collapse${produto.id}`" aria-expanded="false" :aria-controls="`collapse${produto.id}`">
-                    <img :src="produto.img" :alt="produto.alt">
-                    <span>
-                        #{{1+produto.id}} | {{produto.titulo}}
-                    </span>
-                </button>
-            </h2>
+        <div class="accordion" id="lista-produtos">
+            <div class="accordion-item mb-4" v-for="produto in produtos" :key="produto.id">
 
-            <div :id="`collapse${produto.id}`" class="accordion-collapse collapse" :aria-labelledby="`heading${produto.id}`">
-                <div class="accordion-body">
-                    <div class="form-group">
-                        <label for="usr">QTD:</label>
-                        <input type="number" id="usr" name="quantity" min="0" max="25" v-model="produto.qtd" @input="qtdProduto(produto.id, produto.qtd, produto.valor)">
-                        <h1>{{produto.qtd}} | {{produto.valor}} | <span v-if="produto.qtd">{{produto.valor * produto.qtd}}</span></h1>
-                    </div>
-                    <div>
-                        {{produto.valor}}
+                <h2 class="accordion-header" :id="`heading${produto.id}`">
+                    <button class="accordion-button d-flex justify-content-between collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#collapse${produto.id}`" aria-expanded="false" :aria-controls="`collapse${produto.id}`">
+                        <img :src="produto.img" :alt="produto.alt">
+                        <span>
+                            #{{1+produto.id}} | {{produto.titulo}}
+                        </span>
+                    </button>
+                </h2>
+
+                <div :id="`collapse${produto.id}`" class="accordion-collapse collapse" :aria-labelledby="`heading${produto.id}`">
+                    <div class="accordion-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label class="form-label">Quantidade
+                                            <input type="number" class="form-control text-center" name="quantity" min="0" max="25" v-model="produto.qtd" @input="qtdProduto(produto.id, produto.qtd, produto.valor, produto.observacoes)" placeholder="0">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="display-valores">
+                                        <div class="text-start">Valor: </div>
+                                        <div>{{produto.valor}}</div>
+                                    </div>
+                                    <div class="display-valores">
+                                        <div class="text-start">Qtd x Valor: </div>
+                                        <div>
+                                            <span v-if="produto.qtd">{{produto.valor * produto.qtd}}</span>
+                                            <span v-else>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 form-floating" v-show="false">
+                                <textarea class="form-control" placeholder="Leave a comment here" :id="`floatingTextarea${produto.id}`" style="height: 100px" v-model="produto.observacoes" @input="observacoesProduto(produto.id, produto.observacoes)"></textarea>
+                                <label :for="`floatingTextarea${produto.id}`">Observações</label>
+                            </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
+
+    </form>
 </template>
 
 <script>
@@ -58,19 +79,26 @@ export default {
             const data = await req.json()
             this.produtos = data
         },
-        async qtdProduto(index, qtd, preco) {
+        async qtdProduto(index, qtd, preco, observacoes) {
             this.produtosPedido = this.produtosPedido.filter(function(item) { 
                 return item.id !== index;  
             });
             if(qtd>0) {
+                // console.log("observacoes qtdProduto: " + observacoes)
+                let auxObservacoes =''
+                if(observacoes) auxObservacoes = observacoes
                 this.produtosPedido.push({
-                id: index,
-                qtd: qtd,
-                // titulo: titulo,
-                soma: qtd*preco
+                    id: index,
+                    qtd: qtd,
+                    // titulo: titulo,
+                    soma: qtd*preco,
+                    observacoes: auxObservacoes
                 })
                 this.calcValor()
             }
+        },
+        async observacoesProduto(index, observacoes) {
+            console.log(observacoes)
         },
         async calcValor() {
             this.valorTotal = this.produtosPedido.map(conta => conta.soma).reduce((acc, soma) => soma + acc);
@@ -92,9 +120,16 @@ export default {
     },
     mounted() {
         this.getProdutos()
+    },
+    computed: {
+        recebeObservacoes() {
+            return this.observacoes
+        }
     }
 }
 </script>
+
+
 <style lang="scss" scoped>
     * {
         background-color: transparent;
@@ -142,5 +177,8 @@ export default {
         border-color: var(--primary);
         box-shadow: 0 0 0 0.25rem var(--primary);
         border-radius: 10px;
+    }
+    .display-valores {
+        border: solid 1px var(--primary)
     }
 </style>
