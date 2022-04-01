@@ -63,6 +63,7 @@ export default {
     buscaProduto(e) {
       if(this.inputValorBusca!=null) 
         this.$emit('clicouBusca', this.inputValorBusca)
+        // console.log(this.inputValorBusca)
     }
   },
   emits: ['clicouBusca']
@@ -74,7 +75,7 @@ export default {
       pointer-events: none;
       padding-top: 15px !important;
   }
-  #wrapper-barra-busca * {
+  #wrapper-barra-busca div * {
       pointer-events: auto;
   }
   .botao-busca {

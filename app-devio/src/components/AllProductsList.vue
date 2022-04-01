@@ -27,11 +27,11 @@
                                 </div>
                                 <div class="col">
                                     <div class="display-valores">
-                                        <div><b>Valor:</b> </div>
+                                        <div class="text-start"><b>Valor:</b> </div>
                                         <div>{{produto.valor}}</div>
                                     </div>
                                     <div class="display-valores">
-                                        <div><b>Qtd x Valor:</b> </div>
+                                        <div class="text-start"><b>Qtd x Valor:</b> </div>
                                         <div>
                                             <span v-if="produto.qtd">{{produto.valor * produto.qtd}}</span>
                                             <span v-else>0</span>
@@ -125,12 +125,17 @@ export default {
             const res = await req.json();    
         },
         passarValorBusca (vB) {
+            
             let checaTipo = /^\d+$/.test(vB)
-            if(checaTipo) this.valorBusca = `?id=${vB}`
-            else if(checaTipo=='') this.valorBusca = ''
+            if(checaTipo) {
+                let aux = parseInt(vB)-1 
+                // let aux = vB
+                this.valorBusca = `?id=${aux}`
+            }
+            else if(checaTipo==='') this.valorBusca = ''
             else this.valorBusca = `?titulo=${vB}`
             this.getProdutos()
-            console.log(this.valorBusca)
+            console.log(vB)
         }
     },
     mounted() {

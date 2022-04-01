@@ -18,29 +18,31 @@ npm run serve
 ## About
 The checkout screen is focused on mobile viewports. And cozinha (kitchen) in desktop. The retirada (withdraw), in both.
 The primary color is used in main actions. Secondary is used for other flows besides orders. Tertiary in the focused inputs and buttons. White, exceptionaly in views menu, not a main flow event. Dark color in navigation, like button to top.
+### Video
+On the folder _ASSETS is there a video, with me explaining the project.
 ### Link to figjam
 To see some roughs of this test [click here](https://www.figma.com/file/C5WLDdWNkRC4e5NNysbyuw/Teste-DEVIO?node-id=0%3A1)
 ### Conclusion
 #### Implement in next sprint
-- Some compability problems with sass-loader and oher dependencies
-- Study values for alts in images
-- Develope better warning in feedbacks
-- Implement money mask value in button pay
-- Implement forms validators
-- Insert some add, remove button, in featured produts
-- Suggest client table number in crud to PO
-- Try some foreign key, to get name of products, instead of create a new value in pedido.produto.titulo, use the name o product, selected by the pedido.produto.id
-- Change name of AllProductList, to something like CheckoutCrud
-- Only get value from cliente name input after insert some letters
-- Implement form layout in search, like insert name
-- Suggest client name edit
-- Install font inside application with @font-face, instead of google cdn
-Started Observations, but couldn’t finish
-Missed some extras in requirements, like pusher, order details, payment methods.
-- Need mor time to get better layout
-- Need more time to organize scss and css style structure
-- For now retirada (withdraw)  is a copy of cozinha (kitchen)
-- Npm vue3-carousel warning when get fetch() values
-- WaitingOrders get issue when don't have orders and have to reload page
-- Chose better colors values for vars
+- Some compability problems with sass-loader and oher dependencies;
+- Study values for alts in images;
+- Develope better warning in feedbacks;
+- Implement money mask value in button pay;
+- Implement forms validators;
+- Insert some add, remove button, in featured produts;
+- Suggest client table number in crud to PO;
+- Try some foreign key, to get name of products, instead of create a new value in pedido.produto.titulo, use the name o product, selected by the pedido.produto.id;
+- Change name of AllProductList, to something like CheckoutCrud;
+- Only get value from cliente name input after insert some letters;
+- Implement form layout in search, like insert name;
+- Suggest client name edit;
+- Install font inside application with @font-face, instead of google cdn;
+- Started Observations, but couldn’t finish
+- Missed some extras in requirements, like pusher, order details, payment methods.
+- Need mor time to get better layout;
+- Need more time to organize scss and css style structure;
+- For now retirada (withdraw)  is a copy of cozinha (kitchen);
+- Npm vue3-carousel warning when get fetch() values;
+- WaitingOrders get issue when don't have orders and have to reload page;
+- Chose better colors values for vars;
 - Chose better when use portugues and english ;)

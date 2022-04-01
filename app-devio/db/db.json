@@ -73,5 +73,28 @@
       "tipo": "Retirado"
     }
   ],
-  "pedidos": []
+  "pedidos": [
+    {
+      "nome": null,
+      "pedido": null,
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "Fulano",
+      "pedido": [
+        {
+          "id": 0,
+          "qtd": 2,
+          "tituloProduto": "Macarrão",
+          "soma": 86,
+          "observacoes": ""
+        }
+      ],
+      "metodo": null,
+      "status": "Solicitado",
+      "id": 2
+    }
+  ]
 }
