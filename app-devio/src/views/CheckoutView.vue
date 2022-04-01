@@ -1,15 +1,24 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-6 offset-md-3">
-          <MenuBar />
-          <WaitingOrders />
-          <ClientName @clicked="passarIdCliente" />
-          <AllProductsList :idCliente="idCliente" />
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<MenuBar />
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <WaitingOrders />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+  <section id="secao-comprar" class="border-top mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+          <ClientName @clicked="passarIdCliente" />
+          <AllProductsList :idCliente="idCliente" />
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -40,3 +49,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+// #secao-comprar {
+//   background-color: var(--white)
+// }
+</style>

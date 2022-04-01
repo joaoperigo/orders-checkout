@@ -1,21 +1,17 @@
 <template>
     <SliderBestSellers />
     <SearchBar @clicouBusca="passarValorBusca" />
-    <form action="" @click="pagar($event)">
-
-        <div class="text-center wrapper-button-pay">
-            <input type="submit" class="mx-auto button-pay" :value="`Pagar: R$${valorTotal}`">
-        </div>
+    <form action="" @click="pagar($event)" class="pt-4">
 
         <div class="accordion" id="lista-produtos">
             <div class="accordion-item mb-4" v-for="produto in produtos" :key="produto.id">
 
                 <h2 class="accordion-header" :id="`heading${produto.id}`">
                     <button class="accordion-button d-flex justify-content-between collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#collapse${produto.id}`" aria-expanded="false" :aria-controls="`collapse${produto.id}`">
-                        <img :src="produto.img" :alt="produto.alt">
-                        <span>
+                        <img class="img-produto" :src="produto.img" :alt="produto.alt">
+                        <h2 class="mx-auto">
                             #{{1+produto.id}} | {{produto.titulo}}
-                        </span>
+                        </h2>
                     </button>
                 </h2>
 
@@ -31,11 +27,11 @@
                                 </div>
                                 <div class="col">
                                     <div class="display-valores">
-                                        <div class="text-start">Valor: </div>
+                                        <div><b>Valor:</b> </div>
                                         <div>{{produto.valor}}</div>
                                     </div>
                                     <div class="display-valores">
-                                        <div class="text-start">Qtd x Valor: </div>
+                                        <div><b>Qtd x Valor:</b> </div>
                                         <div>
                                             <span v-if="produto.qtd">{{produto.valor * produto.qtd}}</span>
                                             <span v-else>0</span>
@@ -52,7 +48,9 @@
 
             </div>
         </div>
-
+        <div class="text-center wrapper-button-pay" v-show="this.valorTotal!=0">
+            <input type="submit" class="mx-auto button-pay" :value="`Pagar: R$${valorTotal}`">
+        </div>
     </form>
 </template>
 
@@ -94,7 +92,6 @@ export default {
                 return item.id !== index;  
             });
             if(qtd>0) {
-                // console.log("observacoes qtdProduto: " + observacoes)
                 let auxObservacoes =''
                 if(observacoes) auxObservacoes = observacoes
                 this.produtosPedido.push({
@@ -102,7 +99,6 @@ export default {
                     qtd: qtd,
                     tituloProduto: titulo,
                     soma: qtd*preco,
-
                     observacoes: auxObservacoes
                 })
                 this.calcValor()
@@ -126,7 +122,7 @@ export default {
             body: dataJson
             });
 
-            const res = await req.json();        
+            const res = await req.json();    
         },
         passarValorBusca (vB) {
             let checaTipo = /^\d+$/.test(vB)
@@ -150,11 +146,11 @@ export default {
 
 
 <style lang="scss" scoped>
-    * {
-        background-color: transparent;
-        border-width: 0;
-        outline: none;
-    }
+    // * {
+    //     background-color: transparent;
+    //     border-width: 0;
+    //     outline: none;
+    // }
     .wrapper-button-pay {
         position: fixed;
         top: 0;
@@ -169,8 +165,8 @@ export default {
         // left: 50%;
         // transform: translateY(-50%) translateX(-50%);
         border-radius: 10px;
-        background-color: var(--dark);
-        border: solid 1px var(--dark);
+        background-color: var(--primary);
+        border: 0;
         padding: 10px 15px;
         color: var(--light);
     }
@@ -184,7 +180,8 @@ export default {
     //     border-top-right-radius: 10px;
     // }
     .accordion-button {
-        background-color: transparent;
+        background-color: var(--primary);
+        border-radius: 10px !important;
     }
     // .accordion-collapse {
     //     border-bottom-left-radius: 10px;
@@ -194,10 +191,20 @@ export default {
     // }
     .accordion-button:focus {
         border-color: var(--primary);
-        box-shadow: 0 0 0 0.25rem var(--primary);
+        box-shadow: 0 0 0 0.25rem var(--tertiary);
         border-radius: 10px;
     }
-    .display-valores {
-        border: solid 1px var(--primary)
+    input:focus {
+        box-shadow: 0 0 0 0.25rem var(--tertiary);
+    }
+    // .display-valores {
+    //     border: solid 1px var(--primary)
+    // }
+    .img-produto {
+        border-radius: 50%;
+    }
+    h2 {
+        font-size: 20px;
+        color: var(--light)
     }
 </style>

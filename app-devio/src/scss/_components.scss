@@ -1,0 +1,39 @@
+@mixin btnProperties {
+    border-radius: 4px !important;
+    background-color: var(--primary);
+    border: solid 1px var(--white);
+    padding: 10px 15px;
+    color: var(--light);
+    display: block;
+    text-align: center;
+}
+
+.btn-devio-primary {
+    @include btnProperties;
+    background-color: var(--primary);
+}
+.btn-devio-secondary {
+    @include btnProperties;
+    background-color: var(--secondary);
+}
+.btn-devio-dark {
+    @include btnProperties;
+    background-color: var(--dark);
+}
+.btn-devio-circle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-width: 0;
+    background-color: var(--primary);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--light);
+}
+.accordion-button::after, .accordion-button:not(.collapsed)::after {
+      background-image: url(@/assets/flecha-bottom.svg);
+}
+.desabilitado {
+    pointer-events: none;
+    filter: brightness(80%) saturate(.3);
+}

@@ -1,5 +1,5 @@
 <template>
-    <nav class="d-flex align-items-center menu-bar">
+    <nav class="d-flex align-items-center border-bottom menu-bar">
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
@@ -32,7 +32,7 @@ export default {
         left: 0;
         right: 0;
         padding: 15px 19px;
-        background: var(--light);
-        border-bottom: 2px solid var(--neutralDark);
+        background: var(--white);
+        /* border-bottom: 1px solid var(--neutral); */
     }
 </style>

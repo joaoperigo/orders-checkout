@@ -3,15 +3,15 @@
     <!-- <label for="barra-busca" class="w-100"><h2>Pesquisar</h2></label> -->
     <div class="input-group d-flex justify-content-end">
         <input type="text" class="form-control barra-busca" placeholder="Digite o id ou nome do produto" aria-label="Recipient's username" aria-describedby="button-addon2" id="barra-busca" ref="focaBar" v-model="inputValorBusca">
-        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca" v-show="checaBt" @click="buscaProduto($event)">
+        <button class="btn-devio-primary botao-busca" type="button" id="bt-busca" v-show="checaBt" @click="buscaProduto($event)">
           <img src="@/assets/lupa.svg" alt="" class="img-fluid">
         </button>
-        <button class="btn btn-outline-secondary botao-busca" type="button" id="bt-busca-sobe" v-show="!checaBt" @click="toTop(); buscaProduto($event)">
+        <button class="btn-devio-primary botao-busca botao-busca-topo" type="button" id="bt-busca-sobe" v-show="!checaBt" @click="toTop(); buscaProduto($event)">
           <img src="@/assets/lupa.svg" alt="" class="img-fluid">
         </button>
     </div>
 </div>
-<p class="small m-0 text-start">*Para buscar por ID digite um numero, por nome digite o nome.</p>
+<p class="small m-0 text-start aviso">*Para buscar por ID digite um numero, por nome digite o nome.</p>
 </template>
 
 <script>
@@ -68,11 +68,29 @@ export default {
   emits: ['clicouBusca']
 }
 </script>
+
 <style scoped>
   #wrapper-barra-busca {
       pointer-events: none;
+      padding-top: 15px !important;
   }
   #wrapper-barra-busca * {
       pointer-events: auto;
+  }
+  .botao-busca {
+    padding: 13px 17px;
+    z-index: 2;
+    border-width: 0;
+  }
+  .form-control{
+    border: solid 2px var(--primary)!important;
+    border-radius: 2px;
+    border-right-width: 0;
+  }
+  input:focus, button:focus {
+    box-shadow: 0 0 0 0.25rem var(--tertiary);
+  } 
+  .aviso {
+    color: var(--neutral)
   }
 </style>

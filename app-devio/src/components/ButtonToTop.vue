@@ -1,5 +1,5 @@
 <template>
-    <button @click="toTop"><img src="@/assets/home.svg" alt="" class="img-fluid"></button>
+    <button @click="toTop" class="btn-devio-dark"><img src="@/assets/home.svg" alt="" class="img-fluid"></button>
 </template>
 
 <script>
@@ -17,14 +17,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  button {
-    border-radius: 10px;
-    background-color: var(--dark);
-    border: solid 1px var(--dark);
-    padding: 10px 15px;
-    color: var(--light);
-    display: block;
-    text-align: center;
-  }
+<style lang="scss" scoped>
+.btn-devio-dark img {
+  width: 30px;
+  height: auto;
+}
 </style>

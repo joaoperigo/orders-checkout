@@ -1,0 +1,22 @@
+:root {
+    --primary: #7e0936;
+    --secondary: #77ee32;
+    --tertiary: #997709;
+    --neutral: #999;
+    --neutralDark: #666; 
+    --dark: #333;
+    --light: #f4f4f4;
+    --white: #ffffff;
+  }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+  .bg-tertiary {
+    background-color: var(--tertiary);
+  }
+
+@import '_components.scss'

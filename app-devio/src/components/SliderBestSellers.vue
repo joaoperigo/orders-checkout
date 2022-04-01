@@ -1,11 +1,11 @@
 <template>
-  <h2 class="mt-4 border-top">Destaques</h2>
+  <h2 class="mt-4 pt-3 pb-3 border-top">Destaques</h2>
   <carousel :items-to-show="3.2">
       <slide v-for="slide in produtosDestaque" :key="slide.id">
         <div class="slide-best-seller">
-          <img src="http://placekitten.com/50/50" alt="">
-          <p>#{{slide.id+1}} {{slide.titulo}}</p>
-          <button @click="abreProduto(slide.id)" class="mx-auto">V</button>
+          <img src="http://placekitten.com/100/50" alt="">
+          <h3 class="">#{{slide.id+1}} {{slide.titulo}}</h3>
+          <button @click="abreProduto(slide.id)" class="mx-auto btn-devio-circle">+</button>
         </div> 
       </slide>
         <!-- <template #addons>
@@ -62,7 +62,15 @@ export default {
 .carousel__next--in-active {
   display: none;
 } */
-.slide-best-seller {
-  border: solid 1px var(--dark);
+// .slide-best-seller img {
+//   // border: solid 1px var(--dark);
+//   border-radius: 50%;
+// }
+h2 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+h3 {
+  font-size: 16px;
 }
 </style>
