@@ -131,6 +131,7 @@ export default {
         passarValorBusca (vB) {
             let checaTipo = /^\d+$/.test(vB)
             if(checaTipo) this.valorBusca = `?id=${vB}`
+            else if(checaTipo=='') this.valorBusca = ''
             else this.valorBusca = `?titulo=${vB}`
             this.getProdutos()
             console.log(this.valorBusca)

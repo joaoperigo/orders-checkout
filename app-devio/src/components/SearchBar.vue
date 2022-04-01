@@ -11,6 +11,7 @@
         </button>
     </div>
 </div>
+<p class="small m-0 text-start">*Para buscar por ID digite um numero, por nome digite o nome.</p>
 </template>
 
 <script>
@@ -60,7 +61,8 @@ export default {
         }, 800)
     },
     buscaProduto(e) {
-      this.$emit('clicouBusca', this.inputValorBusca)
+      if(this.inputValorBusca!=null) 
+        this.$emit('clicouBusca', this.inputValorBusca)
     }
   },
   emits: ['clicouBusca']
